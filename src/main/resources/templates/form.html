@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>getJoke: Consuming the Joke API</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Filters</h1>
+        <form action="#" th:action="@{/jokes}" th:object="${jokeFilterForm}" method="POST">
+            <p>What type of joke(s) do you want?</p>
+            <select th:field="*{type}" required>
+                <option value="no-pref">No preference</option>
+                <option value="general">General</option>
+                <option value="programming">Programming</option>                
+            </select>
+
+            <p>How many jokes do you want?</p>
+            <select th:field="*{oneOrTen}" required>
+                <option value="one">1</option>
+                <option value="ten">10</option>
+            </select>
+            <input type="submit" value="Submit"/><input type="reset" value="Reset"/>
+        </form>
+    </body>
+</html>

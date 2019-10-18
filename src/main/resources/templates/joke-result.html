@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>getJoke: Result</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Results</h1>
+        <p th:text="'Q: ' + ${joke.setup}"></p>
+        <p th:text="'A: ' + ${joke.punchline}"></p>
+        <a href="/jokes">Gimme more jokes!</a>
+    </body>
+</html>
