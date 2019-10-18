@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
     <head>
-        <title>getJoke: Consuming the Joke API</title>
+        <title>getJoke: Consuming the Official Joke API</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <h1>Filters</h1>
-        <form action="#" th:action="@{/jokes}" th:object="${jokeFilterForm}" method="POST">
-            <p>What type of joke(s) do you want?</p>
-            <select th:field="*{type}" required>
-                <option value="no-pref">No preference</option>
-                <option value="general">General</option>
-                <option value="programming">Programming</option>                
-            </select>
-
-            <p>How many jokes do you want?</p>
-            <select th:field="*{oneOrTen}" required>
-                <option value="one">1</option>
-                <option value="ten">10</option>
-            </select>
-            <input type="submit" value="Submit"/><input type="reset" value="Reset"/>
-        </form>
+        <div class="container mt-5">
+            <h1 class="display-4 text-center m-5">getJoke: Consuming the Official Joke API</h1>
+            <form class="p-5 card shadow" action="#" th:action="@{/jokes}" th:object="${jokeFilterForm}" method="POST">
+                <div class="form-group">
+                    <label for="type-input">What type of joke(s) do you want?</label>
+                    <select id="type-input" class="custom-select form-control" th:field="*{type}" required>
+                        <option value="no-pref">No preference</option>
+                        <option value="general">General</option>
+                        <option value="programming">Programming</option>                
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount-input">How many jokes do you want?</label>
+                    <select id="amount-input" class="custom-select form-control" th:field="*{oneOrTen}" required>
+                        <option value="one">1</option>
+                        <option value="ten">10</option>
+                    </select>
+                </div>
+                <div class="btn-group">
+                    <input class="btn btn-light" type="submit" value="Submit"/><input class="btn btn-secondary" type="reset" value="Reset"/>
+                </div>
+            </form>
+        </div>
     </body>
 </html>

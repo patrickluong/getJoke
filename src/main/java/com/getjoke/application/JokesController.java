@@ -14,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.getjoke.models.Joke;
 import com.getjoke.models.JokeFilterForm;
-import com.getjoke.models.Jokes;
 
 @Controller
 public class JokesController {
