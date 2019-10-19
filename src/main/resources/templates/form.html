@@ -9,9 +9,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <div class="container mt-5">
+        <div class="container mt-5 mb-5">
             <h1 class="display-4 text-center m-5">getJoke: Consuming the Official Joke API</h1>
-            <form class="p-5 card shadow" action="#" th:action="@{/jokes}" th:object="${jokeFilterForm}" method="POST">
+            <form class="p-5 card shadow" style="background-color: #f5f5f5" action="#" th:action="@{/jokes}" th:object="${jokeFilterForm}" method="POST">
                 <div class="form-group">
                     <label for="type-input">What type of joke(s) do you want?</label>
                     <select id="type-input" class="custom-select form-control" th:field="*{type}" required>
@@ -28,7 +28,7 @@
                     </select>
                 </div>
                 <div class="btn-group">
-                    <input class="btn btn-light" type="submit" value="Submit"/><input class="btn btn-secondary" type="reset" value="Reset"/>
+                    <input class="btn" style="border-color: #000; background-color: #fff" type="submit" value="Submit"/><input class="btn btn-secondary" type="reset" value="Reset"/>
                 </div>
             </form>
         </div>
